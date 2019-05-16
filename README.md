@@ -33,4 +33,4 @@ Build datasets
 
 Train codenn models and predict on test set
 
-`./run.sh {sql|csharp}`
+`./run.sh {sql|csharp|python}`
