@@ -191,6 +191,9 @@ function main()
 	cmd:option('-beamsize',  10, 'beam size?')
 	cmd:option('-language', 'code', 'Code language')
 	cmd:option('-rnn_size', 400, 'Dimension')
+	cmd:option('-batch_size', 100, 'Batch size')
+	cmd:option('-max_code_length', 100, 'Max code length')
+	cmd:option('-max_nl_length', 100, 'Max NL length')
 	local working_dir = os.getenv("CODENN_WORK")
 
 	cmd:text()
@@ -200,9 +203,9 @@ function main()
 		max_length=20,
 		beam_size=opt.beamsize,
 		layers=1,
-		max_code_length=100,
-		max_nl_length=100,
-		batch_size=100,
+		max_code_length=opt.max_code_length,
+		max_nl_length=opt.max_nl_length,
+		batch_size=opt.batch_size,
 		alignments=opt.alignments,
 	  rnn_size=opt.rnn_size}
 
