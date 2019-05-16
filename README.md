@@ -26,6 +26,8 @@ Install modified sqlparse
 `cd src/sqlparse/`
 `sudo python setup.py install`
 
+Specify batch size, max code length and max NL length in `buildData.sh` and `run.sh`.
+
 Build datasets
 
 `cd src/model`
