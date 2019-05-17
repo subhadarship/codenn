@@ -191,7 +191,7 @@ function main()
 		', gpu=' .. opt.gpuidx)
 
 		if bleu > bestbleu then
-			save_models()
+			save_models(working_dir)
 			bestbleu = bleu
 		end
 
@@ -206,10 +206,10 @@ function main()
 	end
 end
 
-function save_models() 
+function save_models(working_dir) 
 	print('saving models')
-	torch.save(opt.language .. '.encoder', encoder.cell) -- save the whole encoder
-	torch.save(opt.language .. '.decoder', decoder.cells[1]) -- save only the decoder cell
+	torch.save(working_dir .. '/' .. opt.language .. '.encoder', encoder.cell) -- save the whole encoder
+	torch.save(working_dir .. '/' .. opt.language .. '.decoder', decoder.cells[1]) -- save only the decoder cell
 end
 
 main()
