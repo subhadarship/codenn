@@ -15,8 +15,11 @@ Requirements
 
 Setup environment
 
-`export PYTHONPATH=~/codenn/src/:~/codenn/src/sqlparse`
-`export CODENN_DIR=~/codenn/`
+
+`export CODENN_DIR=<PATH TO CODENN DIR>`
+
+`export PYTHONPATH=${CODENN_DIR}/src/:${CODENN_DIR}/src/sqlparse`
+
 `export CODENN_WORK=./workdir`
 
 Build both csharp and sql datasets
