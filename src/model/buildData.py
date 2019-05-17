@@ -25,7 +25,12 @@ def tokenizeCode(code, lang):
   elif lang == "csharp":
     typedCode = parseCSharp(code)
   elif lang == "python":
-    typedCode = code.strip().decode('utf-8').encode('ascii', 'replace').split("\\s")
+    typedCode = code.strip().decode('utf-8').encode('ascii', 'replace')
+    chars_python = [':', '(', ')']
+    for char in chars_python:
+        typedCode = typedCode.replace(char, ' '+char+' ')
+    typedCode = typedCode.split()
+
 
   tokens = [re.sub( '\s+', ' ', x.strip())  for x in typedCode]
   return tokens
